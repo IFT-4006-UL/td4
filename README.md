@@ -31,4 +31,6 @@ Cette interface est aussi utilisé dans deux classes:
 La classe `AssignateurDeSiegeSimple` est en charge de l'assignation des sièges dans un avion.
 Cette classe a trop de responsabilités et ne respecte pas le SRP.
 
-Corrigez la situation.
+1. Identifier les nombreuses responsabilités actuelles de la classe `AssignateurDeSiegeSimple`
+2. Identifier la seule responsabilité que devrait avoir la classe `AssignateurDeSiegeSimple`.
+3. Corriger la situation.
