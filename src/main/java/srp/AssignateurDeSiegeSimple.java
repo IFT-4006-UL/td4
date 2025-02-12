@@ -6,15 +6,14 @@ import srp.exceptions.SiegeNonDisponibleException;
 import java.util.List;
 
 public class AssignateurDeSiegeSimple {
-  private final BaseDeDonnees baseDeDonnees;
+  private final VolRepository volRepository;
 
-  public AssignateurDeSiegeSimple(BaseDeDonnees baseDeDonnees) {
-    this.baseDeDonnees = baseDeDonnees;
+  public AssignateurDeSiegeSimple(VolRepository volRepository) {
+    this.volRepository = volRepository;
   }
 
   public Siege assigner(int volId, PassagerType passagerType) {
-    String req = "SELECT * FROM t_vol WHERE id=" + volId + ";";
-    Vol vol = (Vol) baseDeDonnees.execute(req);
+    Vol vol = volRepository.findById(volId);
 
     List<Siege> sieges = vol.getSieges();
 
